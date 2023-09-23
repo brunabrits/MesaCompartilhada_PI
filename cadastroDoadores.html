@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Cadastre-se como doador!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Cadastre-se como doador!</title>
 </head>
+
 <body>
-
-<form>
-    <div class="form-group">
-        <label> Nome fantasia de sua empresa</label>
-        <input type="text" class="form-control" placeholder="Seu nome fantasia">
-      </div> 
-
+  <div class="container">
+    <h1>Cadastro doador</h1>
+    <h4>Dados básicos:</h4>
+    <form>
       <div class="form-group">
-        <label> Cnpj </label>
-        <input type="text" class="form-control" placeholder="Seu Cnpj">
-        <small class="form-text text-muted">Nunca vamos compartilhar seu cnpj, com ninguém.</small>
+        <label>Nome fantasia de sua empresa:</label>
+        <input type="text" class="form-control" placeholder="Nome fantasia">
       </div>
 
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de estabelecimento</label>
+      <div class="form-group">
+        <label> CNPJ: </label>
+        <input type="text" class="form-control" placeholder="00.000.000/0000-00">
+        <small class="form-text text-muted">Nunca vamos compartilhar seu CNPJ com ninguém.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de estabelecimento:</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option></option>
           <option>Restaurante</option>
@@ -32,29 +37,57 @@
           <option>Outro</option>
         </select>
       </div>
+      <h4>Endereço do estabelecimento:</h4>
+      <div class="form-row">
+        <div class="col-10 form-group">
+          <label for="exampleInputAddress">Endereço:</label>
+          <input type="text" class="form-control" placeholder="Ex: Avenida Brasil" id="exampleInputAddress">
+        </div>
+        <div class="col-2">
+          <label for="numero">Número:</label>
+          <input type="text" id="numero" class="form-control" placeholder="Ex: 123">
+        </div>
 
+      </div>
+      <div class="form-row">
+        <div class="col form-group">
+          <label for="Cep">CEP:</label>
+          <input type="text" id="Cep" class="form-control" placeholder="00000-00">
+        </div>
+        <div class="col form-group">
+          <label for="Complemento">Complemento:</label>
+          <input type="text" id="Complemento" class="form-control" placeholder="Ex: Apto 1">
+        </div>
+        <div class="col form-group">
+          <label for="Bairro">Bairro:</label>
+          <input type="text" id="Bairro" class="form-control" placeholder="Ex: Centro">
+        </div>
+        <div class="col form-group">
+          <label for="Cidade">Cidade:</label>
+          <select id="Cidade" class="form-control">
+            <option>Diadema</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col"></div>
+      </div>
+      <h4>Dados de login:</h4>
       <div class="form-group">
-        <label for="exampleInputEmail1">Endereço do estabelecimento </label>
-        <input type="text" class="form-control"  placeholder="Rua ">
-        <input type="text" class="form-control"  placeholder="CEP">
-        <input type="text" class="form-control"  placeholder="Complemento">
-        <input type="text" class="form-control"  placeholder="Bairro">
-        <input type="text" class="form-control" value="Diadema">
+        <label for="exampleInputEmail1">Digite seu email:</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="contato@empresa.com.br">
       </div>
 
-
       <div class="form-group">
-        <label for="exampleInputEmail1">Digite seu email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-      </div>
-  
-      <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
+        <label for="exampleInputPassword1">Senha:</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
       </div>
 
-    <button type="submit" class="btn btn-dark">Enviar</button>
-  </form>
+      <button type="submit" class="btn btn-dark">Enviar</button>
+    </form>
+  </div>
 
 
 
@@ -75,9 +108,15 @@
 
 
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
