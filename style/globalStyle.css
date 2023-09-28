@@ -48,4 +48,15 @@
     justify-self: center;
   }
 }
+.container-fluid{
+  padding: 40px;
+}
 
+.banner_titulo_dois{
+  padding-top: 40px;
+  text-align: center;
+}
+
+.sub_somos{
+  align-self: center;
+}
