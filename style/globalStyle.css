@@ -9,6 +9,8 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: bold;
 }
 .banner {
   background-image: url(../img/azul_claro.svg);
@@ -47,5 +49,3 @@
   }
 }
 
-/*font-family: 'Gaegu', cursive;
-    font-weight: bold;*/
