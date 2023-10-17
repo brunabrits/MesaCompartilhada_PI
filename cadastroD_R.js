@@ -1,11 +1,11 @@
 function cadastroD(){
 
     let login = document.getElementById("nome").value
-    let testabelecimento =  document.getElementById("exampleFormControlSelect1").value
-    let email = document.getElementById("exampleInputEmail1").value
+    let testabelecimento =  document.getElementById("tipo").value
+    let email = document.getElementById("email").value
 
     let dados = [
-        {id:0,login:login,testabelecimento:testabelecimento,email:email}
+        {id:Date.now(),login:login,testabelecimento:testabelecimento,email:email}
     ]
 
     alert("Obrigada por fazer o seu cadastro " + dados[0].login + "\n Você tem um(a) " + dados[0].testabelecimento +" certo?" + "\n Seu email é " + dados[0].email)
