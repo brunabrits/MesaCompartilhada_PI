@@ -62,6 +62,18 @@ function pegaValores() {
 
   return novoDado;
 }
+function limpaCampos() {
+document.getElementById("nome").value = "";
+document.getElementById("cnpj").value = "";
+document.getElementById("tipo").value = "";
+document.getElementById("endereco").value = "";
+document.getElementById("numero").value = "";
+document.getElementById("Cep").value = "";
+document.getElementById("Complemento").value = "";
+document.getElementById("Bairro").value = "";
+document.getElementById("email").value = "";
+document.getElementById("senha").value = "";
+}
 // função que pega o cadastro dos Doadores 'D'
 function cadastroD(){
     let novoCadastro = pegaValores()
@@ -74,6 +86,9 @@ function cadastroD(){
           return alert("Email já cadastrado")
       }
     }
+    if (novoCadastro.dadosLogin.email == "") {
+      return alert("Preencha os dados corretamente");
+    } 
     banco.push(novoCadastro)
     banco = JSON.stringify(banco)
     localStorage.setItem("Banco", banco)
@@ -87,7 +102,8 @@ function cadastroD(){
         "\n Seu email é " +
         novoCadastro.dadosLogin.email
     );
-    
+    limpaCampos()
+    window.location.href = "./login.html"
     
 }
 
@@ -102,13 +118,17 @@ function cadastroR(){
         return alert("Email já cadastrado");
       }
     }
+    if (novoCadastro.dadosLogin.email == "") {
+      return alert("Preencha os dados corretamente");
+    } 
     banco.push(novoCadastro);
     banco = JSON.stringify(banco);
     localStorage.setItem("Banco", banco);
 
 
     alert("Obrigada por fazer o seu cadastro " + novoCadastro.dadosBasicos.nome + "\n Você é um(a) " + novoCadastro.dadosBasicos.tipo  +" certo?"+ "\n Seu email é " + novoCadastro.dadosLogin.email)
-  }
+
+}
 
 
 primeiroAcesso();
