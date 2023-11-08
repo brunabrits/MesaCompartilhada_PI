@@ -1,27 +1,114 @@
-function cadastroD(){
-
-    let login = document.getElementById("nome").value
-    let testabelecimento =  document.getElementById("tipo").value
-    let email = document.getElementById("email").value
-
-    let dados = [
-        {id:Date.now(),login:login,testabelecimento:testabelecimento,email:email}
-    ]
-
-    alert("Obrigada por fazer o seu cadastro " + dados[0].login + "\n Você tem um(a) " + dados[0].testabelecimento +" certo?" + "\n Seu email é " + dados[0].email)
+function primeiroAcesso() {
+    // Se não tiver "Banco" no localStorage insere 
+    if (!localStorage.getItem("Banco")) {
+        let dados = [
+          {
+            id: Date.now(),
+            dadosBasicos: {
+              nome: "Fatec",
+              cnpj: "00.000.000/0000-00",
+              tipo: "Outro",
+            },
+            endereco: {
+              logradouro: "Avenida Luiz Merenda",
+              numero: "433",
+              CEP: "09931-390",
+              complemento: "Não tem",
+              bairro: "Canhema",
+              cidade: "Diadema",
+            },
+            dadosLogin: {
+              email: "Fatec@217.com",
+              senha: "Fatec217",
+            },
+          },
+        ];
+        banco = JSON.stringify(dados)
+        localStorage.setItem("Banco", banco)
     }
+}
+function pegaValores() {
+  let nomeE = document.getElementById("nome").value;
+  let cnpj = document.getElementById("cnpj").value;
+  let testabelecimento = document.getElementById("tipo").value;
+  let endereco = document.getElementById("endereco").value;
+  let numero = document.getElementById("numero").value;
+  let CEP = document.getElementById("Cep").value;
+  let complemento = document.getElementById("Complemento").value;
+  let bairro = document.getElementById("Bairro").value;
+  let email = document.getElementById("email").value;
+  let senha = document.getElementById("senha").value;
 
+  let novoDado = {
+    id: Date.now(),
+    dadosBasicos: {
+      nome: nomeE,
+      cnpj: cnpj,
+      tipo: testabelecimento,
+    },
+    endereco: {
+      logradouro: endereco,
+      numero: numero,
+      CEP: CEP,
+      complemento: complemento,
+      bairro: bairro,
+      cidade: "Diadema",
+    },
+    dadosLogin: {
+      email: email,
+      senha: senha,
+    },
+  };
+
+  return novoDado;
+}
 // função que pega o cadastro dos Doadores 'D'
+function cadastroD(){
+    let novoCadastro = pegaValores()
+    let banco = localStorage.getItem("Banco")
+    banco = JSON.parse(banco)
 
-function cadastroR(){
-    let login = document.getElementById("nome").value
-    let torganizacao =  document.getElementById("exampleFormControlSelect1").value
-    let email = document.getElementById("exampleInputEmail1").value
-
-    let dados = [
-        {id:0,login:login,torganizacao:torganizacao,email:email}
-    ]
-
-    alert("Obrigada por fazer o seu cadastro " + dados[0].login + "\n Você é um(a) " + dados[0].torganizacao  +" certo?"+ "\n Seu email é " + dados[0].email)
+    // se email já estiver cadastrado exibe alert e não insere os dados
+    for (let i = 0; i < banco.length; i++) {
+      if (banco[i].dadosLogin.email == novoCadastro.dadosLogin.email) {
+          return alert("Email já cadastrado")
+      }
     }
+    banco.push(novoCadastro)
+    banco = JSON.stringify(banco)
+    localStorage.setItem("Banco", banco)
+
+    alert(
+      "Obrigada por fazer o seu cadastro " +
+        novoCadastro.dadosBasicos.nome +
+        "\n Você tem um(a) " +
+        novoCadastro.dadosBasicos.tipo +
+        " certo?" +
+        "\n Seu email é " +
+        novoCadastro.dadosLogin.email
+    );
+    
+    
+}
+
 // função que pega o cadastro dos recebedores 'R'
+function cadastroR(){
+    let novoCadastro = pegaValores();
+    let banco = localStorage.getItem("Banco");
+    banco = JSON.parse(banco);
+
+    for (let i = 0; i < banco.length; i++) {
+      if (banco[i].dadosLogin.email == novoCadastro.dadosLogin.email) {
+        return alert("Email já cadastrado");
+      }
+    }
+    banco.push(novoCadastro);
+    banco = JSON.stringify(banco);
+    localStorage.setItem("Banco", banco);
+
+
+    alert("Obrigada por fazer o seu cadastro " + novoCadastro.dadosBasicos.nome + "\n Você é um(a) " + novoCadastro.dadosBasicos.tipo  +" certo?"+ "\n Seu email é " + novoCadastro.dadosLogin.email)
+  }
+
+
+primeiroAcesso();
