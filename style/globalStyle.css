@@ -9,7 +9,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
 }
 .banner {
@@ -35,7 +35,23 @@
   max-width: 100%;
   align-self: center;
 }
-
+.centraliza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../img/fundo_login.svg);
+  background-size: cover;
+}
+.vidro{
+  /* From https://css.glass */
+background: rgba(147, 188, 193, 0.4392156862745098);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(147, 188, 193, 0.76);
+}
 @media (max-width: 768px) {
   .banner {
     grid-template-columns: 1fr;
@@ -48,22 +64,21 @@
     justify-self: center;
   }
 }
-.container-fluid{
+.container-fluid {
   padding: 40px;
 }
 
 /* Banner 2: Quem somos*/
-.banner_titulo_dois{
+.banner_titulo_dois {
   padding-top: 40px;
   text-align: center;
 }
 
-.sub_somos{
+.sub_somos {
   align-self: center;
 }
 
 /*Footer*/
-.creator{
+.creator {
   padding-top: 40px;
 }
-

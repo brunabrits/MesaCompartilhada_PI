@@ -15,27 +15,34 @@
 </head>
 
 <body>
-
-    <form>
-        <div class="form-group">
-            <label for="email">Digite seu email:</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="contato@empresa.com.br" required="required">
+    <div class="container-fluid centraliza">
+        <div class="card vidro" style="width: 44rem;">
+        <div class="card-body " >
+            <h5 class="card-title">Login</h5>
+            <form>
+                <div class="form-group">
+                    <label for="email">Digite seu email:</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="contato@empresa.com.br" required="required">
+                </div>
+        
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Senha">
+                </div>
+        
+                <button class="pushable btn btn-info" type="submit" onclick="fazerLogin()">
+                    <span class="edge"></span>
+                    <span class="front">
+                        Enviar
+                    </span>
+                </button>
+                <a class="btn btn-outline-link" href="./index.html">Não possui cadastro?</a>
+            </form>
+            
         </div>
-
-        <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="password" class="form-control" id="senha" placeholder="Senha">
-        </div>
-
-        <button class="pushable" type="submit" onclick="fazerLogin()">
-            <span class="edge"></span>
-            <span class="front">
-                Enviar
-            </span>
-        </button>
-    </form>
-
+    </div>
+</div>
 
     <script src="./login.js"></script>
 
