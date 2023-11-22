@@ -127,6 +127,8 @@ function cadastroR(){
 
 
     alert("Obrigada por fazer o seu cadastro " + novoCadastro.dadosBasicos.nome + "\n Você é um(a) " + novoCadastro.dadosBasicos.tipo  +" certo?"+ "\n Seu email é " + novoCadastro.dadosLogin.email)
+    limpaCampos();
+    window.location.href = "./login.html";
 
 }
 
