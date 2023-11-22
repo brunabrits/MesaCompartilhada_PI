@@ -74,11 +74,15 @@ border: 1px solid rgba(147, 188, 193, 0.76);
   text-align: center;
 }
 
+.section_dois{
+  /* background-color:#e8dcb5; */
+}
+
 .sub_somos {
   align-self: center;
 }
 
 /*Footer*/
 .creator {
-  padding-top: 40px;
+  padding-top: 60px;
 }
