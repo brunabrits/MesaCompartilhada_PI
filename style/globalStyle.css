@@ -64,19 +64,21 @@ border: 1px solid rgba(147, 188, 193, 0.76);
     justify-self: center;
   }
 }
+
+
+/* Banner 2: Quem somos*/
 .container-fluid {
   padding: 40px;
 }
 
-/* Banner 2: Quem somos*/
 .banner_titulo_dois {
   padding-top: 40px;
   text-align: center;
 }
 
 .section_dois{
-  /* background-color:#e8dcb5; */
-}
+  background-color:#faf6e9e0; }
+/* tom mais claro do creme bege #faf6e9e0*/
 
 .sub_somos {
   align-self: center;
