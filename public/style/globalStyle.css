@@ -11,6 +11,7 @@
   margin: 0px;
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
+  color: #000;
 }
 .banner {
   background-image: url(../img/azul_claro.svg);
@@ -19,12 +20,14 @@
   background-position: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 }
 .banner_textos {
   padding: 13rem 4rem;
 }
 .banner_titulo {
   font-weight: bold;
+  
 }
 .banner_saibaMais {
   background-color: var(--laranja);
