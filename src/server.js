@@ -3,6 +3,7 @@ const path = require("path");
 const principalRoutes = require("../src/routes/principal");
 const plataformaRoutes = require("../src/routes/plataforma")
 const server = express();
+server.use(express.json())
 
 server.use(principalRoutes);
 
