@@ -11,7 +11,6 @@ function pegaValores() {
   let senha = document.getElementById("senha").value;
 
   let novoDado = {
-    id: Date.now(),
     dadosBasicos: {
       nome: nomeE,
       cnpj: cnpj,
