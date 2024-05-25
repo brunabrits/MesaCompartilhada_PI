@@ -1,6 +1,9 @@
 {
-  
+  "scripts": {
+    "inicia": "nodemon -e js,mjs,cjs,json,mustache src/server.js"
+  },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mustache-express": "^1.3.2"
   }
 }
