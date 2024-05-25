@@ -4,15 +4,15 @@ const path = require("path");
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/pages/index.html"));
+  res.render("pages/index")
 });
 
 router.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/pages/login.html"));
+  res.render("pages/login")
 });
 
 router.get("/cadastroDoadores", (req, res)=>{
-  res.sendFile(path.join(__dirname, "../../public/pages/cadastroDoadores.html"));
+  res.render("pages/cadastroDoadores");
 });
 
 router.post("/cadastroDoadores", (req, res) => {
@@ -22,9 +22,7 @@ router.post("/cadastroDoadores", (req, res) => {
 });
 
 router.get("/cadastroRecebedores", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../../public/pages/cadastroRecebedores.html")
-  );
+  res.render("pages/cadastroRecebedores")
 });
 
 router.post("/cadastroRecebedores", (req, res) => {

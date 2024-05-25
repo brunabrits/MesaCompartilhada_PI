@@ -1,18 +1,26 @@
 const express = require("express");
 const path = require("path");
+const mustache = require("mustache-express")
 const principalRoutes = require("../src/routes/principal");
 const plataformaRoutes = require("../src/routes/plataforma")
 const server = express();
+
+server.set("view engine", "mustache");
+server.set("views", path.join(__dirname, "views"));
+
+server.engine("mustache", mustache())
+
 server.use(express.json())
 
 server.use(principalRoutes);
 
 server.use(plataformaRoutes)
 
-server.use(express.static(path.join(__dirname, "../public")));
+server.use("/", express.static(path.join(__dirname, "../public")));
+
 
 server.use((req,res)=>{
-    res.sendFile(path.join(__dirname, "../public/pages/pagina404.html"));
+    res.render("pages/pagina404");
 })
 
 server.listen(8080, () => {

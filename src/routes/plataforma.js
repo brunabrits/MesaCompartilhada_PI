@@ -3,8 +3,12 @@ const path = require("path");
 const router = Router();
 
 router.get("/dashboard", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/pages/dashboard.html"));
+  res.render("pages/dashboard")
 });
+
+router.get("/meusdados", (req, res) => {
+  res.render("pages/meusdados");
+})
 
 
 module.exports = router;
