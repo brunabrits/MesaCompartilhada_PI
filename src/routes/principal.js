@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
   res.render("pages/index")
 });
 router.get("/login", loginController.loginG);
+router.post("/login", loginController.loginP);
 router.get("/cadastroDoadores", cadastroController.doadores);
 router.get("/cadastroRecebedores", cadastroController.recebedores);
 
