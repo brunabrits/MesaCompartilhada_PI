@@ -3,7 +3,9 @@ const loginG = (req, res) => {
 };
 
 const loginP = (req, res) => {
-
+  const { email, senha } = req.body;
+  console.log(email);
+  console.log(senha);
 }
 
 module.exports = {
