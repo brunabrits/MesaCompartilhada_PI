@@ -4,8 +4,15 @@ function fazerLogin() {
 const baseURL = window.location.href;
 async function buscarDados(){
  const res = await fetch(baseURL, {
-  method: "GET"
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email: document.getElementById("email").value,
+    senha: document.getElementById("senha").value,
+  }),
  })
- console.log(res)
+  const data = await res.json();
  
 }
