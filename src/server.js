@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
 const mustache = require("mustache-express")
-const principalRoutes = require("../src/routes/principal");
-const plataformaRoutes = require("../src/routes/plataforma")
+const principalRoutes = require("./routes/principal");
+const plataformaRoutes = require("./routes/plataforma")
 const server = express();
 
 server.set("view engine", "mustache");
