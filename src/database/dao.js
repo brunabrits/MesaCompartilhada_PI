@@ -69,20 +69,6 @@ function deleteUser(id, callback) {
   );
 }
 
-function getUserByLogin(login, callback) {
-  connection.query(
-    "SELECT * FROM Usuarios WHERE email = ?",
-    login,
-    (error, results, fields) => {
-      if (error) {
-        callback(error, null);
-      } else {
-        callback(results[0]);
-      }
-    }
-  );
-}
-
 function addED(user, callback) {
   connection.query(
     "INSERT INTO Empresa_Doadora SET ?",
@@ -139,15 +125,45 @@ function addEnderecoER(endereco, callback) {
   );
 }
 
+function getEDByLogin(email, senha, callback) {
+  connection.query(
+    "SELECT * FROM Empresa_Doadora WHERE Email_Ed = ? AND Senha_Ed = ?",
+    [email, senha],
+    (error, results) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(results[0]);
+      }
+    }
+  );
+}
+
+function getERByLogin(email, senha, callback) {
+  connection.query(
+    "SELECT * FROM Empresa_Recebedora WHERE Email_Er = ? AND Senha_Er = ?",
+    [email, senha],
+    (error, results) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(results[0]);
+      }
+    }
+  );
+}
+
+
 module.exports = {
   getAllUsers,
   getUserById,
   addUser,
   updateUser,
   deleteUser,
-  getUserByLogin,
   addED,
   addEnderecoED,
   addER,
   addEnderecoER,
+  getEDByLogin,
+  getERByLogin,
 };
