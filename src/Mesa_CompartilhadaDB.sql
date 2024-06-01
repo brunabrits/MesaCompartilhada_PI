@@ -49,7 +49,9 @@ CREATE TABLE EMPRESA_RECEBEDORA(
 CREATE TABLE DOACAO(
  Cod_Doacao int not null AUTO_INCREMENT PRIMARY KEY,
  Nome_Doacao varchar(50),
+ Nome_Doadora varchar(50),
  Desc_Doacao varchar(30),
+ Qtd_Doacao int, 
  Status_Doacao varchar(10),
  Observacao_Doacao varchar(30),
  Data_Postada_Doacao datetime,
