@@ -153,6 +153,16 @@ function getERByLogin(email, senha, callback) {
   );
 }
 
+function getAllDoacoes(callback) {
+  connection.query("SELECT * FROM DOACAO", (error, results) => {
+    if (error) {
+      callback(error, null);
+    } else {
+      callback(results);
+    }
+  });
+}
+
 
 module.exports = {
   getAllUsers,
@@ -166,4 +176,5 @@ module.exports = {
   addEnderecoER,
   getEDByLogin,
   getERByLogin,
+  getAllDoacoes,
 };
