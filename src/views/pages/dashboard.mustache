@@ -12,6 +12,7 @@
             rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="../js/sessao.js"></script>
         <link rel="stylesheet" href="../style/globalStyle.css">
         <title>Mesa Compartilhada - Dashboard</title>
     </head>
@@ -25,14 +26,26 @@
     <div style="background-color: white;">
         <div class="container">
             <h3 class="pt-4 pb-4 m-0">Disponiveis</h3>
-            <div class="cards d-flex flex-column flex-md-row justify-content-between" style="flex-wrap: wrap;">
+            <div class="cards d-flex flex-column flex-md-row justify-content-between align-items-center" style="flex-wrap: wrap;">
 
 
                 <!-- Caso não tenha doações -->
-                <!-- <h6 class="display-5">Não há doações...</h6> -->
-
+                {{#faltaDoacoes}}
+                    <h6 class="display-5">Não há doações...</h6> -->
+                {{/faltaDoacoes}}
 
                 <!--CARD DE DOAÇÕES-->
+                {{#doacoes}}
+                <div class="card mb-5 " style="width: 18rem;">
+                    <div class="card-body rounded" style="background-color: #eee;">
+                        <h5 class="card-title">{{Nome_Doacao}}</h5>
+                        <h6 class="card-subtitle mb-2 ">Nome do restaurante</h6>
+                        <p class="card-text">{{Desc_Doacao}}</p>
+                        <p class="btn m-0">qtd-KM</p>
+                        <p class="btn m-0">{{Observacao_Doacao}}</p>
+                    </div>
+                </div>
+
                 <!-- <div class="card pb-5" style="width: 18rem;">
                     <div class="card-body rounded" style="background-color: #eee;">
                         <h5 class="card-title">Título da doação - qtd</h5>
@@ -42,6 +55,8 @@
                         <p class="btn m-0">espc</p>
                     </div>
                 </div> -->
+
+                {{/doacoes}}
             </div>
             
         </div>
@@ -49,7 +64,7 @@
     </div>
 
 
-
+    <script src="../js/sessao.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
