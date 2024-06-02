@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const dao = require("../database/dao");
-const { doacao } = require("../models/Doacao");
+const { doacaoP } = require("../controllers/doacaoController");
 const path = require("path");
 const router = Router();
 
@@ -21,6 +21,6 @@ router.get("/criarDoacao", (req, res) => {
   res.render("pages/criarDoacao");
 });
 
-router.post("/criarDoacao", )
+router.post("/criarDoacao", doacaoP);
 
 module.exports = router;
