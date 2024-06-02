@@ -163,6 +163,20 @@ function getAllDoacoes(callback) {
   });
 }
 
+function createDoacao(doacao, callback) {
+  connection.query(
+    "INSERT INTO DOACAO SET ?",
+    doacao,
+    (error, results) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(results.insertId);
+      }
+    }
+  );
+}
+
 
 module.exports = {
   getAllUsers,
@@ -177,4 +191,5 @@ module.exports = {
   getEDByLogin,
   getERByLogin,
   getAllDoacoes,
+  createDoacao,
 };
